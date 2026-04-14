@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "id": "article1",
+      "title": "基于C++的即时通讯软件",
+      "summary": "基于C++与Qt开发仿QQ轻量级即时通讯工具，实现公网通讯、登录注册、实时聊天、断线重连等完整功能，稳定易用。",
+      "date": "2025年09月07日",
+      "category": "项目开发",
+      "image": "img/QQ_LITE/index.png",
+      "content":"text/QQ_LITE.txt"
+    },
+    {
+      "id": "article2",
+      "title": "python爬虫",
+      "summary": "本系统基于Python开发，用于爬取廖雪峰官方网站的Python教程，实现目录抓取、内容爬取、CSV保存、本地读取等完整功能，支持交互式菜单操作，简单易用。",
+      "date": "2025年6月15日",
+      "category": "项目开发",
+      "image": "img/pachong/beijing.png",
+      "content": "text/pachong.txt"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+## 项目简介
+
+项目名称：Python教程爬虫
+
+开发环境：Python 3.11.7
+
+开发语言：Python
+
+库：requests、re、BeautifulSoup4、csv、queue、threading
+
+项目类型：网页爬虫 / 数据采集工具
+
+本项目用于爬取廖雪峰Python3教程，实现自动抓取目录、批量获取文章内容、保存为CSV文件、交互式操作等功能。
+
+## 项目核心亮点
+
+全自动爬取：自动解析网页结构，一键获取全部教程内容。
+
+数据持久化：爬取内容自动保存为CSV文件，可随时查看。
+
+交互操作：提供菜单式操作界面，无需修改代码即可使用。
+
+异常处理：支持错误检测，内容不存在时自动提示，不崩溃。
+
+编码安全：采用UTF-8编码，完美支持中文显示。
+
+<img src="img/pachong/0.png" class="gallery-item">
+
+## 功能与实现说明
+
+### 一、目录爬取功能
+
+程序启动后首先爬取目标网站的所有教程目录，提取章节标题与对应URL，并保存为 thehttpd.csv 文件。
+
+功能包含：
+
+- 自动获取所有章节标题
+
+- 自动拼接完整URL
+
+- 过滤无效链接
+
+- 保存为CSV目录文件
+
+<img src="img/pachong/1.png" class="gallery-item">
+
+<img src="img/pachong/2.png" class="gallery-item">
+
+#### 功能实现：网页解析
+
+使用requests请求页面，BeautifulSoup解析HTML结构，提取标题与链接。
+
+```cpp
+def requests_url(data):
+    soup=BeautifulSoup(data.text,'html.parser')
+    find_tryurl=soup.find_all('a',class_='truncate')
+    ...
+    return this_httpd
+```
+
+### 二、单章内容爬取模块
+
+根据传入的 URL，获取对应章节的正文内容，自动去除 HTML 标签，返回干净文本。
+功能说明：
+
+    发送 HTTP 请求获取页面内容
+
+    使用 BeautifulSoup 解析正文区域
+
+    提取纯文本，自动格式化换行
+    支持异常捕获与超时处理
+
+    不存在内容时返回提示信息
+
+<img src="img/pachong/3.png" class="gallery-item">
+
+#### 关键代码
+
+```cpp
+def requests_text(url):
+    data = requests.get(url, timeout=10)
+    soup = BeautifulSoup(data.text, 'html.parser')
+    intro = soup.find('div', id='gsi-chapter-content')
+    return intro.get_text(strip=True, separator='\n')
+```
+
+### 三、多线程并发爬取模块（核心功能）
+
+通过 5 个线程同时爬取所有章节内容，使用队列分配任务，线程锁保证数据安全，最终统一写入 CSV 文件。
+
+#### 功能说明:
+
+    基于 Queue 任务队列实现任务分配
+
+    5 线程并发执行，提升爬取效率
+
+    线程锁保证数据写入不乱码、不错乱
+
+    所有任务完成后统一保存文件
+
+    实时显示爬取进度
+
+    最终保存为 thedata.csv
+
+<img src="img/pachong/4.png" class="gallery-item">
+
+#### 关键代码
+
+```cpp
+# 任务队列 + 多线程
+url_queue = Queue()
+lock = threading.Lock()
+def worker():
+    while not url_queue.empty():
+        title, url = url_queue.get()
+        content = requests_text(url)
+        with lock:
+            result_dict[title] = content
+启动5个线程
+def requests_textall_multi(the_httpd):
+    for title, url in the_httpd.items():
+        url_queue.put((title, url))
+    for i in range(5):
+        t = threading.Thread(target=worker)
+        t.start()
+```
+
+### 四、CSV 数据读取模块
+
+读取已爬取的 thedata.csv 文件，将内容解析为字典格式，并在控制台展示所有课程内容。
+
+<img src="img/pachong/5.png" class="gallery-item">
+
+<img src="img/pachong/6.png" class="gallery-item">
+
+#### 功能说明
+
+    读取本地 CSV 文件
+
+    跳过表头，自动解析有效数据
+
+    过滤空行与异常格式数据
+
+    以章节名为 key，内容为 value
+
+#### 关键代码
+
+```cpp
+def read_csv(filenames):
+    with open(filenames, 'r', encoding='utf-8-sig') as f:
+        thedata = csv.reader(f)
+        next(thedata)
+        for i in thedata:
+            csv_user_data[i[0]] = i[1]
+    return csv_user_data
+```
+
+## 免责声明：
+
+本爬虫脚本仅作为Python编程学习、多线程技术实践的交流使用，未经允许爬取他人网站数据可能涉及违法违规。
+
+请合理控制爬取频率，避免对目标网站服务器造成压力，若因滥用脚本导致IP封禁、法律纠纷等问题，与开发者无关。
+
+### 完整代码：https://github.com/HUALINlin9995/MY_PROJECT/blob/main/web_crawler_script.py
