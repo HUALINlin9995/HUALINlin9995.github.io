@@ -17,6 +17,15 @@
       "category": "项目开发",
       "image": "img/pachong/beijing.png",
       "content": "text/pachong.txt"
+    },
+    {
+      "id": "article3",
+      "title": "微信小程序控制6818开发版",
+      "summary": "本项目基于微信小程序端与嵌入式 Linux 技术开发，实现移动端小程序远程控制 6818 开发板，支持设备指令下发、外设控制、状态数据实时回显、交互操作等核心功能，架构清晰、拓展性强，上手与二次开发十分便捷。",
+      "date": "2026年4月20日",
+      "category": "项目开发",
+      "image": "img/6818-Wechat/index.png",
+      "content": "text/6818-Wechat.txt"
     }
   ]
 }

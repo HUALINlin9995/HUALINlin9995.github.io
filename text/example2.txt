@@ -1,0 +1,40 @@
+## 示例文章 2
+
+这是第二个示例文章，展示不同的内容布局。
+
+### 技术栈介绍
+
+本项目使用了以下技术：
+
+- **前端**: HTML5, CSS3, JavaScript
+- **后端**: Python Flask
+- **数据库**: SQLite
+
+### 界面展示
+
+#### 桌面端界面
+
+<img src="img/QQ_LITE/index.png" class="project-screenshot" alt="桌面端界面" title="桌面端主界面截图">
+
+#### 移动端界面
+
+<img src="img/6818-Wechat/index1.png" class="img-phone" alt="移动端界面1" title="微信小程序界面1">
+
+<img src="img/6818-Wechat/index2.png" class="img-phone" alt="移动端界面2" title="微信小程序界面2">
+
+### 核心功能
+
+1. 实时通讯功能
+2. 文件传输
+3. 群组聊天
+4. 消息记录
+
+### 系统架构
+
+```
+客户端 -> 服务器 -> 数据库
+   ↑          ↓
+   └─── 实时通信 ───┘
+```
+
+这个示例展示了多种内容类型的组合显示效果。

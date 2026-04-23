@@ -161,4 +161,4 @@ def read_csv(filenames):
 
 请合理控制爬取频率，避免对目标网站服务器造成压力，若因滥用脚本导致IP封禁、法律纠纷等问题，与开发者无关。
 
-### 完整代码：https://github.com/HUALINlin9995/MY_PROJECT/blob/main/web_crawler_script.py
+<a href="https://github.com/HUALINlin9995/MY_PROJECT/blob/main/web_crawler_script.py">完整代码</a>

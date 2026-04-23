@@ -1,0 +1,101 @@
+# 复杂示例文章
+
+这是一个包含多种元素的复杂示例文章。
+
+## 多级标题测试
+
+### 三级标题
+
+#### 四级标题
+
+这是一段普通文本。
+
+### 图片画廊
+
+这里展示不同类型的图片：
+
+<img src="img/QQ_LITE/index.png" class="gallery-item" alt="项目主界面" title="项目主界面截图">
+
+<img src="img/pachong/beijing.png" class="project-screenshot" alt="项目截图" title="爬虫项目截图">
+
+<img src="img/6818-Wechat/index1.png" class="img-phone" alt="手机界面" title="手机端界面">
+
+### 代码块示例
+
+#### Python代码
+
+```python
+import requests
+import json
+
+def fetch_data(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return json.loads(response.text)
+    return None
+```
+
+#### JavaScript代码
+
+```javascript
+function handleClick() {
+    console.log('Button clicked!');
+    return true;
+}
+```
+
+#### C++代码
+
+```cpp
+#include <iostream>
+#include <string>
+
+class HelloWorld {
+public:
+    void greet() {
+        std::cout << "Hello, World!" << std::endl;
+    }
+};
+```
+
+### 视频演示
+
+项目演示视频：
+
+<video src="video/demo1.mp4" class="project-video" title="主要演示视频">您的浏览器不支持视频播放</video>
+
+操作说明视频：
+
+<video src="video/demo2.mp4" class="project-video" title="操作说明视频">您的浏览器不支持视频播放</video>
+
+#### 使用提示
+
+- **单击视频**：进入自定义全屏模式（保持宽高比）
+- **双击视频**：使用浏览器原生全屏模式
+- **ESC键**：退出全屏模式
+- **全屏时**：视频不会拉伸，保持原有比例
+
+### 功能特性
+
+- ✅ **图片预览功能**：点击任意图片可放大预览
+- ✅ **视频播放功能**：支持全屏播放，保持视频比例
+- ✅ **代码高亮显示**：自动识别和格式化代码块
+- ✅ **响应式布局**：适配桌面和移动设备
+- ✅ **多种标题级别**：支持H1-H6标题
+- ✅ **链接渲染功能**：自动处理外部链接
+
+### 相关链接
+
+以下是一些有用的链接：
+
+<a href="https://github.com" class="external-link">GitHub</a>
+
+<a href="https://developer.mozilla.org" class="docs-link">MDN Web Docs</a>
+
+<a href="https://www.python.org" class="python-link">Python官网</a>
+
+### 总结
+
+这个复杂示例展示了系统处理各种内容类型的能力，包括多级标题、不同类型的图片、代码块、视频等元素的综合显示效果。
+
+所有图片都可以点击放大预览，视频可以直接在页面中播放。

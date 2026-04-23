@@ -1,0 +1,32 @@
+## 示例文章 1
+
+这是一个示例文章内容，用于展示系统的功能。
+
+### 功能特点
+
+- 支持Markdown风格的标题
+- 图片可以点击预览
+- 支持代码块显示
+- 响应式设计
+
+### 示例图片
+
+这里是一些示例图片：
+
+<img src="img/QQ_LITE/index.png" class="gallery-item" alt="项目截图" title="QQ轻量级通讯工具主界面">
+
+<img src="img/pachong/beijing.png" class="img-phone" alt="手机截图" title="手机端界面展示">
+
+### 示例代码
+
+```python
+def hello_world():
+    print("Hello, World!")
+    return True
+```
+
+### 视频示例
+
+<video src="video/example.mp4" class="project-video" title="项目演示视频"></video>
+
+这是一段普通文本内容，用于展示段落的显示效果。
